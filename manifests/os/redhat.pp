@@ -10,6 +10,7 @@ class zookeeper::os::redhat(
   $packages          = ['zookeeper'],
   $manual_clean      = false
 ) {
+  include stdlib
 
   # allow installing multiple packages, like zookeeper, zookeeper-bin etc.
   ensure_resource('package', $packages, {'ensure' => $ensure})
